@@ -21,28 +21,28 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) == 0)
 
-# class LocationTestClass(TestCase):
-#     def setUp(self):
-#         self.location = Location(location_name='Nairobi')
-#         self.location.save_location()
+class LocationTestClass(TestCase):
+    def setUp(self):
+        self.location = Location(location_name='Nairobi')
+        self.location.save_location()
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.location, Location))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.location, Location))
 
-#     def test_save_location(self):
-#         self.location.save_location()
-#         locations = Location.get_locations()
-#         self.assertTrue(len(locations) > 0)
+    def test_save_location(self):
+        self.location.save_location()
+        locations = Location.get_locations()
+        self.assertTrue(len(locations) > 0)
 
-#     # def test_get_locations(self):
-#     #     self.location.save_location()
-#     #     locations = Location.get_locations()
-#     #     self.assertTrue(len(locations) > 1)
+    # def test_get_locations(self):
+    #     self.location.save_location()
+    #     locations = Location.get_locations()
+    #     self.assertTrue(len(locations) > 1)
 
-#     def test_delete_location(self):
-#         self.location.delete_location()
-#         location = Location.objects.all()
-#         self.assertTrue(len(location) == 0)
+    def test_delete_location(self):
+        self.location.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)
 
 # class ImagesTestClass(TestCase):
 #     def setUp(self):
