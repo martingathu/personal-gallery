@@ -44,19 +44,19 @@ class LocationTestClass(TestCase):
         location = Location.objects.all()
         self.assertTrue(len(location) == 0)
 
-# class ImagesTestClass(TestCase):
-#     def setUp(self):
-#         self.image = Images(name = 'mynewshoe', description = 'a picture of new shoe design', location = 'Nairobi', category = 'beauty')
+class ImagesTestClass(TestCase):
+    def setUp(self):
+        self.image = Images(name = 'mynewshoe', description = 'a picture of new shoe design', location = 'Nairobi', category = 'beauty')
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.image, Images))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.image, Images))
 
-#     def test_save_images(self):
-#         self.image.save_images()
-#         images = Images.objects.all()
-#         self.asserTrue(len(images)>0)
+    def test_save_images(self):
+        self.image.save_images()
+        images = Images.objects.all()
+        self.asserTrue(len(images)>0)
 
-#     def test_delete_images(self):
-#         self.image.delete_images()
-#         images = Images.objects.all()
-#         self.asserTrue(len(images) == 0)
+    def test_delete_images(self):
+        self.image.delete_images()
+        images = Images.objects.all()
+        self.asserTrue(len(images) == 0)
