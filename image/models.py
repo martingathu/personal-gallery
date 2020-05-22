@@ -4,8 +4,8 @@ from django.db import models
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
 
-# class Location(models.Model):
-#     location_name = models.CharField(max_length=30)
+class Location(models.Model):
+    location_name = models.CharField(max_length=30)
 
 
 # class Images(models.Model):
