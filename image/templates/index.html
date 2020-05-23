@@ -1,0 +1,57 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container-fluid bg-light" style="padding-bottom:10%">
+    <h1 class="text-center" style="font-family: 'Creepster', cursive;">My Photos</h1>
+    <div class="row">
+
+        {% for image in images %}
+        
+        {% with go=image.allinfo %}
+        <div class="col-xs-6 col-sm-6 col-md-4 card" style="padding-top:1%;margin-top:1%;">
+            <img src="{{image.image_path.url}}" class="img-responsive" alt="Image" style="height:300px;width:100%;"
+                type="button" class="btn btn-sm btn-outline-primary" id="image{{image.id}}" data-whatever="{{image.id}}"
+                data-toggle="modal" data-target="#extraModal{{image.id}}">
+            <h5 class="text-center"> {{ image.description }} </h5>
+        </div>
+        {%endwith%}
+        {% empty %}
+        <h3 class="text-center">There is No images</h3>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% for image in images %}
+
+<div class="modal fade" id="extraModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+        <div class="modal-content " style="background-color: #ececec;width:600px;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="imagetitle"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+
+            <div class="modal-body" style="text-align:center">
+                <img style="height: 400px; width: 500px;" id="image" class=" rounded text-center"
+                    src='{{image.image_path.url}}'> </div>
+                    <div class="modal-body" style="text-align:center">
+
+                <p1 id="imageCaption">{{ image.description }}</p1>
+                <p><a><span class="glyphicon glyphicon-map-marker"></span></a>
+                    <small>{{ image.location.location_name | title }}</small></p>
+                <a target="_blank" href="{{image.image_path.url}}" id="imagedirectlink" class="btn btn-outline-info">view
+                    image</a>
+            </div>
+            <div class="modal-footer">
+                <input type="text" class="form-control" id="myInput"
+                    value="{{image.your_image.url}}">
+                <button type="button" class="btn btn-info" onclick="myFunction()">Copy Link</button>
+            </div>
+        </div>
+    </div>
+</div>
+{%endfor%}    
+
+{%endblock%}
