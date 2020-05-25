@@ -1,3 +1,5 @@
+body{background-color: seashell;
+    font-size: larger;}
 h1
 {
   color: green;
@@ -7,6 +9,18 @@ h1
     font-size: xx-large;
     color: black;
 }
-.navbar{
+nav{
     font-size: larger;
+    padding: 1%;
+}
+#myNavbar{
+    font-size: larger;
+    
+}
+a{
+    font-size: larger;
+}
+.card{
+    border: 2px solid wheat;
+   
 }
