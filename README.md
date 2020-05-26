@@ -7,7 +7,7 @@ A personal gallery application that allow users to display their photos for othe
 ## Description
 Personal gallery is a web application that allow user to display their photos for others to see. Other users can view and also share available images by copying the image link.
 
-#### You can view the site at: 
+#### You can view the site at: https://martingathupersonalgallery.herokuapp.com/
 
 ## User Stories
 These are the behaviours/features that the application implements for use by a user. As a user I would like to:
